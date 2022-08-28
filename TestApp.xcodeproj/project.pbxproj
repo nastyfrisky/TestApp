@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		4DD036B528BA4CDE00698991 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036B428BA4CDE00698991 /* AppDelegate.swift */; };
 		4DD036B728BA4CDE00698991 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036B628BA4CDE00698991 /* SceneDelegate.swift */; };
-		4DD036B928BA4CDE00698991 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036B828BA4CDE00698991 /* ViewController.swift */; };
+		4DD036B928BA4CDE00698991 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036B828BA4CDE00698991 /* NavigationController.swift */; };
 		4DD036BC28BA4CDE00698991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD036BA28BA4CDE00698991 /* Main.storyboard */; };
 		4DD036BE28BA4CDF00698991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD036BD28BA4CDF00698991 /* Assets.xcassets */; };
 		4DD036C128BA4CDF00698991 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD036BF28BA4CDF00698991 /* LaunchScreen.storyboard */; };
+		4DD036CE28BA4FB400698991 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036CD28BA4FB400698991 /* RegistrationViewController.swift */; };
+		4DD036D128BA5F2B00698991 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D028BA5F2B00698991 /* TextInputField.swift */; };
+		4DD036D328BA6CCF00698991 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D228BA6CCF00698991 /* PasswordTextField.swift */; };
+		4DD036D528BAB80200698991 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D428BAB80200698991 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DD036B128BA4CDE00698991 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD036B428BA4CDE00698991 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD036B628BA4CDE00698991 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DD036B828BA4CDE00698991 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DD036B828BA4CDE00698991 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		4DD036BB28BA4CDE00698991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DD036BD28BA4CDF00698991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DD036C028BA4CDF00698991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DD036C228BA4CDF00698991 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DD036CD28BA4FB400698991 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4DD036D028BA5F2B00698991 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		4DD036D228BA6CCF00698991 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		4DD036D428BAB80200698991 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		4DD036B328BA4CDE00698991 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				4DD036B428BA4CDE00698991 /* AppDelegate.swift */,
-				4DD036B628BA4CDE00698991 /* SceneDelegate.swift */,
-				4DD036B828BA4CDE00698991 /* ViewController.swift */,
-				4DD036BA28BA4CDE00698991 /* Main.storyboard */,
-				4DD036BD28BA4CDF00698991 /* Assets.xcassets */,
-				4DD036BF28BA4CDF00698991 /* LaunchScreen.storyboard */,
-				4DD036C228BA4CDF00698991 /* Info.plist */,
+				4DD036C828BA4D1200698991 /* ViewControllers */,
+				4DD036CC28BA4D4700698991 /* Models */,
+				4DD036CF28BA5F0300698991 /* Views */,
+				4DD036CB28BA4D3800698991 /* Storyboards */,
+				4DD036CA28BA4D3100698991 /* App */,
+				4DD036C928BA4D1E00698991 /* Resources */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		4DD036C828BA4D1200698991 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036B828BA4CDE00698991 /* NavigationController.swift */,
+				4DD036CD28BA4FB400698991 /* RegistrationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4DD036C928BA4D1E00698991 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036BD28BA4CDF00698991 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4DD036CA28BA4D3100698991 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036B428BA4CDE00698991 /* AppDelegate.swift */,
+				4DD036B628BA4CDE00698991 /* SceneDelegate.swift */,
+				4DD036C228BA4CDF00698991 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4DD036CB28BA4D3800698991 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036BA28BA4CDE00698991 /* Main.storyboard */,
+				4DD036BF28BA4CDF00698991 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4DD036CC28BA4D4700698991 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4DD036CF28BA5F0300698991 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036D028BA5F2B00698991 /* TextInputField.swift */,
+				4DD036D428BAB80200698991 /* CustomTextField.swift */,
+				4DD036D228BA6CCF00698991 /* PasswordTextField.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD036B928BA4CDE00698991 /* ViewController.swift in Sources */,
+				4DD036D528BAB80200698991 /* CustomTextField.swift in Sources */,
+				4DD036B928BA4CDE00698991 /* NavigationController.swift in Sources */,
 				4DD036B528BA4CDE00698991 /* AppDelegate.swift in Sources */,
+				4DD036D328BA6CCF00698991 /* PasswordTextField.swift in Sources */,
+				4DD036CE28BA4FB400698991 /* RegistrationViewController.swift in Sources */,
 				4DD036B728BA4CDE00698991 /* SceneDelegate.swift in Sources */,
+				4DD036D128BA5F2B00698991 /* TextInputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S34BZ3639A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestApp/Info.plist;
+				INFOPLIST_FILE = TestApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -304,7 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S34BZ3639A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TestApp/Info.plist;
+				INFOPLIST_FILE = TestApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +396,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
