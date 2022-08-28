@@ -8,6 +8,10 @@
 import UIKit
 
 final class RegistrationViewController: UIViewController {
+    
+    // MARK: - Private Properties
+    
+    private let networkService = NetworkService()
     private let surnameTextField = TextInputField(textLabel: "Введите фамилию:")
     private let nameTextField = TextInputField(textLabel: "Введите имя:")
     private let patronymicTextField = TextInputField(textLabel: "Введите отчество:")
@@ -19,6 +23,8 @@ final class RegistrationViewController: UIViewController {
     private let confirmationTextField = TextInputField(textLabel: "Повторите пароль:")
     private let registrationButton = UIButton()
     private let stackView = UIStackView()
+    
+    // MARK: - Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +53,8 @@ final class RegistrationViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // MARK: - Private Methods
+    
     private func addSubviews() {
         [
             surnameTextField,
@@ -73,6 +81,8 @@ final class RegistrationViewController: UIViewController {
         registrationButton.layer.cornerRadius = 10
         registrationButton.clipsToBounds = true
         registrationButton.backgroundColor = .init(red: 0.29, green: 0.45, blue: 0.65, alpha: 1.0)
+        
+        confirmationTextField.textField.isSecureTextEntry = true
     }
     
     private func setupConstraints() {
@@ -94,37 +104,59 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func isValidEmailAddress(strToValidate: String) -> Bool {
-        let emailValidationRegex = "^[\\p{L}0-9!#$%&'*+\\/=?^_`{|}~-][\\p{L}0-9.!#$%&'*+\\/=?^_`{|}~-]{0,63}@[\\p{L}0-9-]+(?:\\.[\\p{L}0-9-]{2,7})*$"
-
+        let emailValidationRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailValidationPredicate = NSPredicate(format: "SELF MATCHES %@", emailValidationRegex)
-
         return emailValidationPredicate.evaluate(with: strToValidate)
     }
     
     private func validateEmpty(textField: ValidatableTextField) -> Bool {
-        if textField.currentText.isEmpty {
-            
-        }
+        guard (textField.textField.text ?? "").isEmpty else { return true }
+        highlightInvalidValues(textField: textField)
+        return false
+    }
+    
+    private func highlightInvalidValues(textField: ValidatableTextField) {
+        textField.textField.layer.borderColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
     }
     
     @objc private func buttonTap() {
+        var invalidValue = false
+        
         guard let email = emailTextField.textField.text else {
             return
         }
         
         if !isValidEmailAddress(strToValidate: email) {
-            return
+            highlightInvalidValues(textField: emailTextField)
+            
+            invalidValue = true
         }
         
-        if email.isEmpty {
-            return
+        Array<ValidatableTextField>([
+            surnameTextField,
+            nameTextField,
+            patronymicTextField,
+            passwordTextField,
+            confirmationTextField
+        ]).forEach {
+            if !validateEmpty(textField: $0) { invalidValue = true }
         }
-            || (surnameTextField.textField.text ?? "").isEmpty
-            || (nameTextField.textField.text ?? "").isEmpty
-            || (patronymicTextField.textField.text ?? "").isEmpty
-            || (passwordTextField.textField.text ?? "").isEmpty
-            || (confirmationTextField.textField.text ?? "").isEmpty {
-            return
+        
+        guard !invalidValue else { return }
+
+        networkService.register(userData: .init(
+            email: email,
+            firstname: (nameTextField.textField.text ?? ""),
+            lastname: (surnameTextField.textField.text ?? ""),
+            password: (passwordTextField.textField.text ?? "")
+        )) { [weak self] result in
+            switch result {
+            case .failure:
+                self?.showToast(message: "Ошибка от сервера", seconds: 5.0)
+            case .success:
+                let nextVC = AuthorizationViewController()
+                self?.navigationController?.pushViewController(nextVC, animated: true)
+            }
         }
     }
 }

@@ -8,6 +8,9 @@
 import UIKit
 
 final class CustomTextField: UITextField {
+    
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,6 +23,8 @@ final class CustomTextField: UITextField {
     
     required init?(coder: NSCoder) { nil }
     
+    // MARK: - Override Methods
+    
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         bounds.insetBy(dx: 10, dy: 0)
     }
@@ -27,6 +32,8 @@ final class CustomTextField: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         bounds.insetBy(dx: 10, dy: 0)
     }
+    
+    // MARK: - Private Methods
     
     @objc private func editingBegan() {
         layer.borderColor = CGColor(red: 0.29, green: 0.45, blue: 0.65, alpha: 1)

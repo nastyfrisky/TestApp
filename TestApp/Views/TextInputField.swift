@@ -8,16 +8,20 @@
 import UIKit
 
 protocol ValidatableTextField {
-    var currentText: String { get }
+    var textField: CustomTextField { get }
 }
 
 final class TextInputField: UIView, ValidatableTextField {
-    var currentText: String {
-        textField.text ?? ""
-    }
     
-    private let textField = CustomTextField()
+    // MARK: - Public Properties
+    
+    let textField = CustomTextField()
+    
+    // MARK: - Private Properties
+    
     private let label = UILabel()
+    
+    // MARK: - Initializers
     
     init(textLabel: String) {
         super.init(frame: .zero)
@@ -31,6 +35,8 @@ final class TextInputField: UIView, ValidatableTextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private Methods
     
     private func addSubviews() {
         addSubview(label)
@@ -46,7 +52,7 @@ final class TextInputField: UIView, ValidatableTextField {
         textField.layer.cornerRadius = 10
         textField.clipsToBounds = true
         textField.textColor = .black
-        textField.isSecureTextEntry = true
+        textField.isSecureTextEntry = false
     }
     
     private func setupConstraints() {

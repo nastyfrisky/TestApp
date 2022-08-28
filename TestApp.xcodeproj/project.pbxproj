@@ -17,6 +17,16 @@
 		4DD036D128BA5F2B00698991 /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D028BA5F2B00698991 /* TextInputField.swift */; };
 		4DD036D328BA6CCF00698991 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D228BA6CCF00698991 /* PasswordTextField.swift */; };
 		4DD036D528BAB80200698991 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D428BAB80200698991 /* CustomTextField.swift */; };
+		4DD036D728BB991E00698991 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036D628BB991E00698991 /* AuthorizationViewController.swift */; };
+		4DD036DC28BBB68D00698991 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036DB28BBB68D00698991 /* URLSessionProtocol.swift */; };
+		4DD036DE28BBB69E00698991 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036DD28BBB69E00698991 /* NetworkService.swift */; };
+		4DD036E028BBB6B900698991 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036DF28BBB6B900698991 /* Queue.swift */; };
+		4DD036E228BBB8E200698991 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036E128BBB8E200698991 /* RegistrationResponse.swift */; };
+		4DD036E428BBB9AE00698991 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036E328BBB9AE00698991 /* RegistrationRequest.swift */; };
+		4DD036E728BBC03600698991 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036E628BBC03600698991 /* UIViewController+Extension.swift */; };
+		4DD036E928BBD34800698991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036E828BBD34800698991 /* ProfileViewController.swift */; };
+		4DD036EB28BBD4D600698991 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036EA28BBD4D600698991 /* LoginRequest.swift */; };
+		4DD036ED28BBD4E500698991 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD036EC28BBD4E500698991 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +42,16 @@
 		4DD036D028BA5F2B00698991 /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		4DD036D228BA6CCF00698991 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		4DD036D428BAB80200698991 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4DD036D628BB991E00698991 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		4DD036DB28BBB68D00698991 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		4DD036DD28BBB69E00698991 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4DD036DF28BBB6B900698991 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		4DD036E128BBB8E200698991 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
+		4DD036E328BBB9AE00698991 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
+		4DD036E628BBC03600698991 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4DD036E828BBD34800698991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4DD036EA28BBD4D600698991 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		4DD036EC28BBD4E500698991 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +84,9 @@
 		4DD036B328BA4CDE00698991 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				4DD036DA28BBB67F00698991 /* Services */,
 				4DD036C828BA4D1200698991 /* ViewControllers */,
+				4DD036E528BBC00E00698991 /* Extensions */,
 				4DD036CC28BA4D4700698991 /* Models */,
 				4DD036CF28BA5F0300698991 /* Views */,
 				4DD036CB28BA4D3800698991 /* Storyboards */,
@@ -79,6 +101,8 @@
 			children = (
 				4DD036B828BA4CDE00698991 /* NavigationController.swift */,
 				4DD036CD28BA4FB400698991 /* RegistrationViewController.swift */,
+				4DD036D628BB991E00698991 /* AuthorizationViewController.swift */,
+				4DD036E828BBD34800698991 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +137,10 @@
 		4DD036CC28BA4D4700698991 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4DD036E328BBB9AE00698991 /* RegistrationRequest.swift */,
+				4DD036E128BBB8E200698991 /* RegistrationResponse.swift */,
+				4DD036EA28BBD4D600698991 /* LoginRequest.swift */,
+				4DD036EC28BBD4E500698991 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,11 +148,29 @@
 		4DD036CF28BA5F0300698991 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4DD036D028BA5F2B00698991 /* TextInputField.swift */,
 				4DD036D428BAB80200698991 /* CustomTextField.swift */,
+				4DD036D028BA5F2B00698991 /* TextInputField.swift */,
 				4DD036D228BA6CCF00698991 /* PasswordTextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4DD036DA28BBB67F00698991 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036DB28BBB68D00698991 /* URLSessionProtocol.swift */,
+				4DD036DD28BBB69E00698991 /* NetworkService.swift */,
+				4DD036DF28BBB6B900698991 /* Queue.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4DD036E528BBC00E00698991 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DD036E628BBC03600698991 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,12 +244,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD036DE28BBB69E00698991 /* NetworkService.swift in Sources */,
+				4DD036EB28BBD4D600698991 /* LoginRequest.swift in Sources */,
+				4DD036ED28BBD4E500698991 /* LoginResponse.swift in Sources */,
+				4DD036DC28BBB68D00698991 /* URLSessionProtocol.swift in Sources */,
 				4DD036D528BAB80200698991 /* CustomTextField.swift in Sources */,
+				4DD036E728BBC03600698991 /* UIViewController+Extension.swift in Sources */,
 				4DD036B928BA4CDE00698991 /* NavigationController.swift in Sources */,
 				4DD036B528BA4CDE00698991 /* AppDelegate.swift in Sources */,
+				4DD036E928BBD34800698991 /* ProfileViewController.swift in Sources */,
 				4DD036D328BA6CCF00698991 /* PasswordTextField.swift in Sources */,
+				4DD036E028BBB6B900698991 /* Queue.swift in Sources */,
+				4DD036D728BB991E00698991 /* AuthorizationViewController.swift in Sources */,
 				4DD036CE28BA4FB400698991 /* RegistrationViewController.swift in Sources */,
 				4DD036B728BA4CDE00698991 /* SceneDelegate.swift in Sources */,
+				4DD036E228BBB8E200698991 /* RegistrationResponse.swift in Sources */,
+				4DD036E428BBB9AE00698991 /* RegistrationRequest.swift in Sources */,
 				4DD036D128BA5F2B00698991 /* TextInputField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

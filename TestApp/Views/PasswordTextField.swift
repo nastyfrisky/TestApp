@@ -8,14 +8,18 @@
 import UIKit
 
 final class PasswordTextField: UIView, ValidatableTextField {
-    var currentText: String {
-        textField.text ?? ""
-    }
     
-    private let textField = CustomTextField()
+    // MARK: - Public Properties
+    
     var action = {}
+    let textField = CustomTextField()
+    
+    // MARK: - Private Properties
+    
     private let label = UILabel()
     private let button = UIButton()
+    
+    // MARK: - Initializers
     
     init(textLabel: String, image: UIImage?) {
         super.init(frame: .zero)
@@ -33,6 +37,8 @@ final class PasswordTextField: UIView, ValidatableTextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
+    
     private func addSubviews() {
         addSubview(label)
         addSubview(textField)
@@ -49,6 +55,7 @@ final class PasswordTextField: UIView, ValidatableTextField {
         textField.clipsToBounds = true
         textField.textColor = .black
         textField.isSecureTextEntry = true
+        textField.textContentType = .oneTimeCode
     }
     
     private func setupConstraints() {
